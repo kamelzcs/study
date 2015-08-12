@@ -1,0 +1,11 @@
+#lang planet neil/sicp
+(define (expt b n)
+  (cond ((= n 0) 1)
+        (else (* b (expt b (- n 1))))))
+ 
+(define (expr2 b n)
+  (expr-iter b n 1))
+(define (expr-iter b counter product)
+  (if (= counter 0) 
+      product
+      (expr-iter b (- counter 1) (* product b))))
